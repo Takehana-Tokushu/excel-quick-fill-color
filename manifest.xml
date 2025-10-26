@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>e02e08a1-360c-4f28-9df4-b85c13964cf4</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Quick Fill Color"/>
+  <Description DefaultValue="A template to get started."/>
+  <IconUrl DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://tokushu.sharepoint.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="QuickFillGroup">
+                <Label resid="QuickFillGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="FillYellowButton">
+                  <Label resid="FillYellow.Label"/>
+                  <Supertip>
+                    <Title resid="FillYellow.Label"/>
+                    <Description resid="FillYellow.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="YellowIcon.16x16"/>
+                    <bt:Image size="32" resid="YellowIcon.32x32"/>
+                    <bt:Image size="80" resid="YellowIcon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>fillYellow</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="FillOrangeButton">
+                  <Label resid="FillOrange.Label"/>
+                  <Supertip>
+                    <Title resid="FillOrange.Label"/>
+                    <Description resid="FillOrange.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="OrangeIcon.16x16"/>
+                    <bt:Image size="32" resid="OrangeIcon.32x32"/>
+                    <bt:Image size="80" resid="OrangeIcon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>fillOrange</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="FillGrayButton">
+                  <Label resid="FillGray.Label"/>
+                  <Supertip>
+                    <Title resid="FillGray.Label"/>
+                    <Description resid="FillGray.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="GrayIcon.16x16"/>
+                    <bt:Image size="32" resid="GrayIcon.32x32"/>
+                    <bt:Image size="80" resid="GrayIcon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>fillGray</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="ClearFillButton">
+                  <Label resid="ClearFill.Label"/>
+                  <Supertip>
+                    <Title resid="ClearFill.Label"/>
+                    <Description resid="ClearFill.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ClearIcon.16x16"/>
+                    <bt:Image size="32" resid="ClearIcon.32x32"/>
+                    <bt:Image size="80" resid="ClearIcon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>clearFill</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/icon-80.png"/>
+        <bt:Image id="YellowIcon.16x16" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/yellow-16.png"/>
+        <bt:Image id="YellowIcon.32x32" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/yellow-32.png"/>
+        <bt:Image id="YellowIcon.80x80" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/yellow-80.png"/>
+        <bt:Image id="OrangeIcon.16x16" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/orange-16.png"/>
+        <bt:Image id="OrangeIcon.32x32" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/orange-32.png"/>
+        <bt:Image id="OrangeIcon.80x80" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/orange-80.png"/>
+        <bt:Image id="GrayIcon.16x16" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/gray-16.png"/>
+        <bt:Image id="GrayIcon.32x32" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/gray-32.png"/>
+        <bt:Image id="GrayIcon.80x80" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/gray-80.png"/>
+        <bt:Image id="ClearIcon.16x16" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/clear-16.png"/>
+        <bt:Image id="ClearIcon.32x32" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/clear-32.png"/>
+        <bt:Image id="ClearIcon.80x80" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/assets/clear-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://tokushu.sharepoint.com/sites/tokushucloud/Shared%20Documents/01_%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/Script/QuickFillColor/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with Quick Fill Color!"/>
+        <bt:String id="QuickFillGroup.Label" DefaultValue="Quick Fill"/>
+        <bt:String id="FillYellow.Label" DefaultValue="Yellow"/>
+        <bt:String id="FillOrange.Label" DefaultValue="Orange"/>
+        <bt:String id="FillGray.Label" DefaultValue="Gray"/>
+        <bt:String id="ClearFill.Label" DefaultValue="Clear Fill"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Quick Fill Color add-in loaded successfully. Go to the HOME tab and use the Quick Fill buttons."/>
+        <bt:String id="FillYellow.Tooltip" DefaultValue="Fill selected cells with yellow"/>
+        <bt:String id="FillOrange.Tooltip" DefaultValue="Fill selected cells with orange"/>
+        <bt:String id="FillGray.Tooltip" DefaultValue="Fill selected cells with gray"/>
+        <bt:String id="ClearFill.Tooltip" DefaultValue="Clear fill color from selected cells"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
