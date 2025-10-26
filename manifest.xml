@@ -45,9 +45,9 @@
                     <Description resid="FillYellow.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="YellowIcon.16x16"/>
+                    <bt:Image size="32" resid="YellowIcon.32x32"/>
+                    <bt:Image size="80" resid="YellowIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillYellow</FunctionName>
@@ -60,9 +60,9 @@
                     <Description resid="FillOrange.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="OrangeIcon.16x16"/>
+                    <bt:Image size="32" resid="OrangeIcon.32x32"/>
+                    <bt:Image size="80" resid="OrangeIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillOrange</FunctionName>
@@ -75,9 +75,9 @@
                     <Description resid="FillGray.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="GrayIcon.16x16"/>
+                    <bt:Image size="32" resid="GrayIcon.32x32"/>
+                    <bt:Image size="80" resid="GrayIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillGray</FunctionName>
@@ -90,9 +90,9 @@
                     <Description resid="ClearFill.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="ClearIcon.16x16"/>
+                    <bt:Image size="32" resid="ClearIcon.32x32"/>
+                    <bt:Image size="80" resid="ClearIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>clearFill</FunctionName>
@@ -109,6 +109,18 @@
         <bt:Image id="Icon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-16.png"/>
         <bt:Image id="Icon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-32.png"/>
         <bt:Image id="Icon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-80.png"/>
+        <bt:Image id="YellowIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-16.png"/>
+        <bt:Image id="YellowIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-32.png"/>
+        <bt:Image id="YellowIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-80.png"/>
+        <bt:Image id="OrangeIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-16.png"/>
+        <bt:Image id="OrangeIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-32.png"/>
+        <bt:Image id="OrangeIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-80.png"/>
+        <bt:Image id="GrayIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-16.png"/>
+        <bt:Image id="GrayIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-32.png"/>
+        <bt:Image id="GrayIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-80.png"/>
+        <bt:Image id="ClearIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-16.png"/>
+        <bt:Image id="ClearIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-32.png"/>
+        <bt:Image id="ClearIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
