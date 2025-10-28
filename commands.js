@@ -63,11 +63,16 @@ async function clearCellsFill(event) {
       // Get the selected range
       const range = context.workbook.getSelectedRange();
       
-      // Load the range to ensure it's valid
+      // Load the current format to ensure it's valid
       range.load("address");
+      range.format.fill.load("color");
       
-      // Clear ALL formatting (including fill color)
-      range.clear(Excel.ClearApplyTo.formats);
+      // First sync to load the data
+      await context.sync();
+      
+      // Clear only the fill color by setting it to "No Fill"
+      // In Excel API, we need to set the pattern to none
+      range.format.fill.clear();
       
       // Sync changes to Excel
       await context.sync();
@@ -77,8 +82,18 @@ async function clearCellsFill(event) {
   } catch (error) {
     console.error("Error clearing fill:", error);
     
-    // Show error message to user
-    if (error && error.message) {
+    // If the clear() method doesn't work, try alternative approach
+    // by setting to transparent/automatic color
+    try {
+      await Excel.run(async (context) => {
+        const range = context.workbook.getSelectedRange();
+        // Try setting pattern to none which removes fill without affecting borders
+        range.format.fill.pattern = Excel.FillPattern.none;
+        await context.sync();
+        console.log("Cleared fill using pattern method");
+      });
+    } catch (fallbackError) {
+      console.error("Fallback method also failed:", fallbackError);
       showNotification("Error", "Failed to clear fill: " + error.message);
     }
   } finally {
