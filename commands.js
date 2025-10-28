@@ -66,8 +66,14 @@ async function clearCellsFill(event) {
       // Load the range to ensure it's valid
       range.load("address");
       
-      // Clear the fill by setting color to empty string
-      range.format.fill.color = "";
+      // Method 1: Try clearing the fill using clear method
+      try {
+        range.format.fill.clear();
+      } catch (clearError) {
+        // If clear() doesn't work, try setting to white or transparent
+        console.log("Clear method failed, trying alternative...");
+        range.format.fill.color = null;
+      }
       
       // Sync changes to Excel
       await context.sync();
