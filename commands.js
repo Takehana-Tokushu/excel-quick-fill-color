@@ -1,3 +1,143 @@
-/*! For license information please see commands.js.LICENSE.txt */
-!function(){function n(){var r,e,o="function"==typeof Symbol?Symbol:{},c=o.iterator||"@@iterator",i=o.toStringTag||"@@toStringTag";function u(n,o,c,i){var u=o&&o.prototype instanceof f?o:f,s=Object.create(u.prototype);return t(s,"_invoke",function(n,t,o){var c,i,u,f=0,s=o||[],l=!1,p={p:0,n:0,v:r,a:y,f:y.bind(r,4),d:function(n,t){return c=n,i=0,u=r,p.n=t,a}};function y(n,t){for(i=n,u=t,e=0;!l&&f&&!o&&e<s.length;e++){var o,c=s[e],y=p.p,h=c[2];n>3?(o=h===t)&&(u=c[(i=c[4])?5:(i=3,3)],c[4]=c[5]=r):c[0]<=y&&((o=n<2&&y<c[1])?(i=0,p.v=t,p.n=c[1]):y<h&&(o=n<3||c[0]>t||t>h)&&(c[4]=n,c[5]=t,p.n=h,i=0))}if(o||n>1)return a;throw l=!0,t}return function(o,s,h){if(f>1)throw TypeError("Generator is already running");for(l&&1===s&&y(s,h),i=s,u=h;(e=i<2?r:u)||!l;){c||(i?i<3?(i>1&&(p.n=-1),y(i,u)):p.n=u:p.v=u);try{if(f=2,c){if(i||(o="next"),e=c[o]){if(!(e=e.call(c,u)))throw TypeError("iterator result is not an object");if(!e.done)return e;u=e.value,i<2&&(i=0)}else 1===i&&(e=c.return)&&e.call(c),i<2&&(u=TypeError("The iterator does not provide a '"+o+"' method"),i=1);c=r}else if((e=(l=p.n<0)?u:n.call(t,p))!==a)break}catch(n){c=r,i=1,u=n}finally{f=1}}return{value:e,done:l}}}(n,c,i),!0),s}var a={};function f(){}function s(){}function l(){}e=Object.getPrototypeOf;var p=[][c]?e(e([][c]())):(t(e={},c,function(){return this}),e),y=l.prototype=f.prototype=Object.create(p);function h(n){return Object.setPrototypeOf?Object.setPrototypeOf(n,l):(n.__proto__=l,t(n,i,"GeneratorFunction")),n.prototype=Object.create(y),n}return s.prototype=l,t(y,"constructor",l),t(l,"constructor",s),s.displayName="GeneratorFunction",t(l,i,"GeneratorFunction"),t(y),t(y,i,"Generator"),t(y,c,function(){return this}),t(y,"toString",function(){return"[object Generator]"}),(n=function(){return{w:u,m:h}})()}function t(n,r,e,o){var c=Object.defineProperty;try{c({},"",{})}catch(n){c=0}t=function(n,r,e,o){function i(r,e){t(n,r,function(n){return this._invoke(r,e,n)})}r?c?c(n,r,{value:e,enumerable:!o,configurable:!o,writable:!o}):n[r]=e:(i("next",0),i("throw",1),i("return",2))},t(n,r,e,o)}function r(n,t,r,e,o,c,i){try{var u=n[c](i),a=u.value}catch(n){return void r(n)}u.done?t(a):Promise.resolve(a).then(e,o)}function e(n){return function(){var t=this,e=arguments;return new Promise(function(o,c){var i=n.apply(t,e);function u(n){r(i,o,c,u,a,"next",n)}function a(n){r(i,o,c,u,a,"throw",n)}u(void 0)})}}Office.onReady(function(){});function o(n,t){return c.apply(this,arguments)}function c(){return c=e(n().m(function t(r,o){var c;return n().w(function(t){for(;;)switch(t.p=t.n){case 0:return t.p=0,t.n=1,Excel.run(function(){var t=e(n().m(function t(e){return n().w(function(n){for(;;)switch(n.n){case 0:return e.workbook.getSelectedRange().format.fill.color=r,n.n=1,e.sync();case 1:return n.a(2)}},t)}));return function(n){return t.apply(this,arguments)}}());case 1:t.n=3;break;case 2:t.p=2,c=t.v,console.error("Error filling cells:",c);case 3:o.completed();case 4:return t.a(2)}},t,null,[[0,2]])})),c.apply(this,arguments)}function i(n){return u.apply(this,arguments)}function u(){return u=e(n().m(function t(r){var o;return n().w(function(t){for(;;)switch(t.p=t.n){case 0:return t.p=0,t.n=1,Excel.run(function(){var t=e(n().m(function t(r){var e;return n().w(function(n){for(;;)switch(n.n){case 0:return(e=r.workbook.getSelectedRange()).format.fill.load("color"),n.n=1,r.sync();case 1:return e.format.fill.clear(),n.n=2,r.sync();case 2:return n.a(2)}},t)}));return function(n){return t.apply(this,arguments)}}());case 1:t.n=3;break;case 2:t.p=2,o=t.v,console.error("Error clearing fill:",o);case 3:r.completed();case 4:return t.a(2)}},t,null,[[0,2]])})),u.apply(this,arguments)}function a(){return(a=e(n().m(function t(r){return n().w(function(n){for(;;)switch(n.n){case 0:return n.n=1,o("#FFFF00",r);case 1:return n.a(2)}},t)}))).apply(this,arguments)}function f(){return(f=e(n().m(function t(r){return n().w(function(n){for(;;)switch(n.n){case 0:return n.n=1,o("#FFA500",r);case 1:return n.a(2)}},t)}))).apply(this,arguments)}function s(){return(s=e(n().m(function t(r){return n().w(function(n){for(;;)switch(n.n){case 0:return n.n=1,o("#D3D3D3",r);case 1:return n.a(2)}},t)}))).apply(this,arguments)}function l(){return(l=e(n().m(function t(r){return n().w(function(n){for(;;)switch(n.n){case 0:return n.n=1,i(r);case 1:return n.a(2)}},t)}))).apply(this,arguments)}Office.actions.associate("fillYellow",function(n){return a.apply(this,arguments)}),Office.actions.associate("fillOrange",function(n){return f.apply(this,arguments)}),Office.actions.associate("fillGray",function(n){return s.apply(this,arguments)}),Office.actions.associate("clearFill",function(n){return l.apply(this,arguments)})}();
-//# sourceMappingURL=commands.js.map
+/*
+ * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+
+/* global Office, Excel */
+
+Office.onReady(() => {
+  // If needed, Office.js is ready to be called.
+});
+
+// Color definitions - you can easily change these values
+const COLORS = {
+  YELLOW: "#FFFF00",
+  ORANGE: "#FFA500",
+  GRAY: "#D3D3D3"
+};
+
+/**
+ * Fill selected cells with a specific color
+ * @param {string} color - The hex color code
+ * @param {Office.AddinCommands.Event} event
+ */
+async function fillCellsWithColor(color, event) {
+  try {
+    await Excel.run(async (context) => {
+      // Get the selected range
+      const range = context.workbook.getSelectedRange();
+      
+      // Load the range to ensure it's valid
+      range.load("address");
+      
+      // Apply the color immediately
+      range.format.fill.color = color;
+      
+      // Sync changes to Excel
+      await context.sync();
+      
+      console.log(`Successfully filled cells with color: ${color}`);
+    });
+  } catch (error) {
+    console.error("Error filling cells:", error);
+    
+    // Show error message to user
+    if (error && error.message) {
+      showNotification("Error", "Failed to fill cells: " + error.message);
+    }
+  } finally {
+    // IMPORTANT: Always complete the event
+    if (event && event.completed) {
+      event.completed();
+    }
+  }
+}
+
+/**
+ * Clear fill color from selected cells
+ * @param {Office.AddinCommands.Event} event
+ */
+async function clearCellsFill(event) {
+  try {
+    await Excel.run(async (context) => {
+      // Get the selected range
+      const range = context.workbook.getSelectedRange();
+      
+      // Load the range to ensure it's valid
+      range.load("address");
+      
+      // Clear the fill by setting color to empty string
+      range.format.fill.color = "";
+      
+      // Sync changes to Excel
+      await context.sync();
+      
+      console.log("Successfully cleared cell fill");
+    });
+  } catch (error) {
+    console.error("Error clearing fill:", error);
+    
+    // Show error message to user
+    if (error && error.message) {
+      showNotification("Error", "Failed to clear fill: " + error.message);
+    }
+  } finally {
+    // IMPORTANT: Always complete the event
+    if (event && event.completed) {
+      event.completed();
+    }
+  }
+}
+
+/**
+ * Fill selected cells with yellow
+ * @param {Office.AddinCommands.Event} event
+ */
+function fillYellow(event) {
+  fillCellsWithColor(COLORS.YELLOW, event);
+}
+
+/**
+ * Fill selected cells with orange
+ * @param {Office.AddinCommands.Event} event
+ */
+function fillOrange(event) {
+  fillCellsWithColor(COLORS.ORANGE, event);
+}
+
+/**
+ * Fill selected cells with gray
+ * @param {Office.AddinCommands.Event} event
+ */
+function fillGray(event) {
+  fillCellsWithColor(COLORS.GRAY, event);
+}
+
+/**
+ * Clear fill color from selected cells
+ * @param {Office.AddinCommands.Event} event
+ */
+function clearFill(event) {
+  clearCellsFill(event);
+}
+
+/**
+ * Show notification to user (helper function)
+ * @param {string} header - Notification header
+ * @param {string} message - Notification message
+ */
+function showNotification(header, message) {
+  // Only show notifications if Office.context.ui is available
+  if (Office.context.ui && Office.context.ui.displayDialogAsync) {
+    console.log(header + ": " + message);
+  }
+}
+
+// Register the functions with Office
+// These must match the FunctionName values in manifest.xml
+if (Office.actions) {
+  Office.actions.associate("fillYellow", fillYellow);
+  Office.actions.associate("fillOrange", fillOrange);
+  Office.actions.associate("fillGray", fillGray);
+  Office.actions.associate("clearFill", clearFill);
+}
