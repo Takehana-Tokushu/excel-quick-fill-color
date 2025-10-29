@@ -13,7 +13,7 @@ Office.onReady(() => {
 const COLORS = {
   YELLOW: "#FFFF00",
   ORANGE: "#FFA500",
-  GRAY: "#D3D3D3"
+  GRAY: "#A9A9A9"
 };
 
 /**
