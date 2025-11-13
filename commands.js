@@ -24,19 +24,29 @@ const COLORS = {
 async function fillCellsWithColor(color, event) {
   try {
     await Excel.run(async (context) => {
-      // Get the selected range
-      const range = context.workbook.getSelectedRange();
+      // Get all selected ranges (supports non-contiguous selection with Ctrl)
+      const selectedRanges = context.workbook.getSelectedRanges();
       
-      // Load the range to ensure it's valid
-      range.load("address");
+      // Load the areas to get each individual range
+      selectedRanges.load("areas");
       
-      // Apply the color immediately
-      range.format.fill.color = color;
-      
-      // Sync changes to Excel
       await context.sync();
       
-      console.log(`Successfully filled cells with color: ${color}`);
+      // Apply color to each range in the selection
+      const areas = selectedRanges.areas;
+      areas.load("items");
+      
+      await context.sync();
+      
+      // Loop through each area and apply the color
+      for (let i = 0; i < areas.items.length; i++) {
+        areas.items[i].format.fill.color = color;
+      }
+      
+      // Sync all changes to Excel
+      await context.sync();
+      
+      console.log(`Successfully filled ${areas.items.length} range(s) with color: ${color}`);
     });
   } catch (error) {
     console.error("Error filling cells:", error);
@@ -60,35 +70,49 @@ async function fillCellsWithColor(color, event) {
 async function clearCellsFill(event) {
   try {
     await Excel.run(async (context) => {
-      // Get the selected range
-      const range = context.workbook.getSelectedRange();
+      // Get all selected ranges (supports non-contiguous selection with Ctrl)
+      const selectedRanges = context.workbook.getSelectedRanges();
       
-      // Load the current format to ensure it's valid
-      range.load("address");
-      range.format.fill.load("color");
+      // Load the areas to get each individual range
+      selectedRanges.load("areas");
       
-      // First sync to load the data
       await context.sync();
       
-      // Clear only the fill color by setting it to "No Fill"
-      // In Excel API, we need to set the pattern to none
-      range.format.fill.clear();
+      // Get each area
+      const areas = selectedRanges.areas;
+      areas.load("items");
       
-      // Sync changes to Excel
       await context.sync();
       
-      console.log("Successfully cleared cell fill");
+      // Loop through each area and clear the fill
+      for (let i = 0; i < areas.items.length; i++) {
+        areas.items[i].format.fill.clear();
+      }
+      
+      // Sync all changes to Excel
+      await context.sync();
+      
+      console.log(`Successfully cleared fill from ${areas.items.length} range(s)`);
     });
   } catch (error) {
     console.error("Error clearing fill:", error);
     
     // If the clear() method doesn't work, try alternative approach
-    // by setting to transparent/automatic color
     try {
       await Excel.run(async (context) => {
-        const range = context.workbook.getSelectedRange();
-        // Try setting pattern to none which removes fill without affecting borders
-        range.format.fill.pattern = Excel.FillPattern.none;
+        const selectedRanges = context.workbook.getSelectedRanges();
+        selectedRanges.load("areas");
+        await context.sync();
+        
+        const areas = selectedRanges.areas;
+        areas.load("items");
+        await context.sync();
+        
+        // Try setting pattern to none for each area
+        for (let i = 0; i < areas.items.length; i++) {
+          areas.items[i].format.fill.pattern = Excel.FillPattern.none;
+        }
+        
         await context.sync();
         console.log("Cleared fill using pattern method");
       });
