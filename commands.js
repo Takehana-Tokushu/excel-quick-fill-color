@@ -13,6 +13,7 @@ Office.onReady(() => {
 const COLORS = {
   YELLOW: "#FFFF00",
   ORANGE: "#FFA500",
+  BLUE: "#4682B4",
   GRAY: "#A9A9A9"
 };
 
@@ -117,6 +118,14 @@ function fillGray(event) {
 }
 
 /**
+ * Fill selected cells with blue
+ * @param {Office.AddinCommands.Event} event
+ */
+function fillBlue(event) {
+  fillCellsWithColor(COLORS.BLUE, event);
+}
+
+/**
  * Clear fill color from selected cells
  * @param {Office.AddinCommands.Event} event
  */
@@ -141,6 +150,7 @@ function showNotification(header, message) {
 if (Office.actions) {
   Office.actions.associate("fillYellow", fillYellow);
   Office.actions.associate("fillOrange", fillOrange);
+  Office.actions.associate("fillBlue", fillBlue);
   Office.actions.associate("fillGray", fillGray);
   Office.actions.associate("clearFill", clearFill);
 }
