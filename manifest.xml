@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>e02e08a1-360c-4f28-9df4-b85c13964cf4</Id>
-  <Version>1.1.0.0</Version>
+  <Version>1.1.1.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>ja-JP</DefaultLocale>
   <DisplayName DefaultValue="Quick Fill Color"/>
-  <Description DefaultValue="選択セルを業務別の色で塗り分けます。共有ランタイム・起動先読み対応。"/>
+  <Description DefaultValue="選択セルを業務別の色で塗り分けます。共有ランタイム・自動先読み対応。"/>
   <IconUrl DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
@@ -22,7 +22,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.0.html"/>
+    <SourceLocation DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -122,21 +122,6 @@
                     <FunctionName>clearFill</FunctionName>
                   </Action>
                 </Control>
-                <Control xsi:type="Button" id="QuickFillSettingsButton">
-                  <Label resid="Settings.Label"/>
-                  <Supertip>
-                    <Title resid="Settings.Label"/>
-                    <Description resid="Settings.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
               </Group>
             </OfficeTab>
           </ExtensionPoint>
@@ -166,11 +151,10 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.0.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.0.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="Settings.Label" DefaultValue="起動設定"/>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with Quick Fill Color!"/>
         <bt:String id="QuickFillGroup.Label" DefaultValue="Quick Fill"/>
         <bt:String id="FillYellow.Label" DefaultValue="予約"/>
@@ -180,7 +164,6 @@
         <bt:String id="ClearFill.Label" DefaultValue="クリア"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="Settings.Tooltip" DefaultValue="このブックを開くときの先読み設定と処理結果を表示します"/>
         <bt:String id="GetStarted.Description" DefaultValue="Quick Fill Color add-in loaded successfully. Go to the HOME tab and use the Quick Fill buttons."/>
         <bt:String id="FillYellow.Tooltip" DefaultValue="選択したセルを予約として塗りつぶします"/>
         <bt:String id="FillOrange.Tooltip" DefaultValue="選択したセルを移動として塗りつぶします"/>
