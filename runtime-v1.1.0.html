@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quick Fill 起動設定</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 20px; color: #242424; line-height: 1.7; }
+    h1 { font-size: 22px; } h2 { font-size: 17px; margin-top: 28px; }
+    button { display: block; width: 100%; margin: 12px 0; padding: 12px; border: 1px solid #aaa; border-radius: 6px; background: #fff; cursor: pointer; font: inherit; }
+    #enable-startup { background: #176b45; color: white; border-color: #176b45; }
+    button:disabled { opacity: .5; cursor: wait; }
+    [role="status"] { background: #f2f5f3; padding: 12px; border-radius: 6px; overflow-wrap: anywhere; }
+    small { color: #555; }
+  </style>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" data-use-associated-actions-only="1"></script>
+  <script defer src="runtime-v1.1.0.js"></script>
+</head>
+<body>
+  <h1>Quick Fill 起動設定</h1>
+  <p id="status" role="status" aria-live="polite">Excelとの接続を準備しています…</p>
+  <h2>開いたときに先読みする</h2>
+  <p>このブックを次回開くときにアドインの準備を始め、最初の色ボタンの待ち時間を減らします。ブックごとに一度設定してください。</p>
+  <p id="startup-status" role="status" aria-live="polite">設定を確認しています…</p>
+  <button id="enable-startup" disabled>先読みを有効にする</button>
+  <button id="disable-startup" disabled>先読みを無効にする</button>
+  <p>設定後、このパネルは閉じてかまいません。色の変更はホームのボタンを押したときだけ実行します。</p>
+  <small>v1.1.0 · 初めて使うブックでは最初の読み込みが必要です。ブラウザーがタブを休止・破棄した場合の復帰待ちは残ることがあります。</small>
+</body>
+</html>
