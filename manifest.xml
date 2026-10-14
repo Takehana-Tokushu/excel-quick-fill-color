@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>e02e08a1-360c-4f28-9df4-b85c13964cf4</Id>
-  <Version>1.1.1.0</Version>
+  <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
-  <DefaultLocale>ja-JP</DefaultLocale>
+  <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Quick Fill Color"/>
-  <Description DefaultValue="選択セルを業務別の色で塗り分けます。共有ランタイム・自動先読み対応。"/>
+  <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/help"/>
@@ -15,29 +15,20 @@
   <Hosts>
     <Host Name="Workbook"/>
   </Hosts>
-  <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-      <Set Name="ExcelApi" MinVersion="1.9"/>
-    </Sets>
-  </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
+    <SourceLocation DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Workbook">
-        <Runtimes>
-          <Runtime resid="Taskpane.Url" lifetime="long"/>
-        </Runtimes>
         <DesktopFormFactor>
           <GetStarted>
             <Title resid="GetStarted.Title"/>
             <Description resid="GetStarted.Description"/>
             <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Taskpane.Url"/>
+          <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <OfficeTab id="TabHome">
               <Group id="QuickFillGroup">
@@ -54,9 +45,9 @@
                     <Description resid="FillYellow.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="IconYellow.16x16"/>
-                    <bt:Image size="32" resid="IconYellow.32x32"/>
-                    <bt:Image size="80" resid="IconYellow.80x80"/>
+                    <bt:Image size="16" resid="YellowIcon.16x16"/>
+                    <bt:Image size="32" resid="YellowIcon.32x32"/>
+                    <bt:Image size="80" resid="YellowIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillYellow</FunctionName>
@@ -69,27 +60,12 @@
                     <Description resid="FillOrange.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="IconOrange.16x16"/>
-                    <bt:Image size="32" resid="IconOrange.32x32"/>
-                    <bt:Image size="80" resid="IconOrange.80x80"/>
+                    <bt:Image size="16" resid="OrangeIcon.16x16"/>
+                    <bt:Image size="32" resid="OrangeIcon.32x32"/>
+                    <bt:Image size="80" resid="OrangeIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillOrange</FunctionName>
-                  </Action>
-                </Control>
-                <Control xsi:type="Button" id="FillBlueButton">
-                  <Label resid="FillBlue.Label"/>
-                  <Supertip>
-                    <Title resid="FillBlue.Label"/>
-                    <Description resid="FillBlue.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="IconBlue.16x16"/>
-                    <bt:Image size="32" resid="IconBlue.32x32"/>
-                    <bt:Image size="80" resid="IconBlue.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>fillBlue</FunctionName>
                   </Action>
                 </Control>
                 <Control xsi:type="Button" id="FillGrayButton">
@@ -99,9 +75,9 @@
                     <Description resid="FillGray.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="IconGray.16x16"/>
-                    <bt:Image size="32" resid="IconGray.32x32"/>
-                    <bt:Image size="80" resid="IconGray.80x80"/>
+                    <bt:Image size="16" resid="GrayIcon.16x16"/>
+                    <bt:Image size="32" resid="GrayIcon.32x32"/>
+                    <bt:Image size="80" resid="GrayIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>fillGray</FunctionName>
@@ -114,9 +90,9 @@
                     <Description resid="ClearFill.Tooltip"/>
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="IconClear.16x16"/>
-                    <bt:Image size="32" resid="IconClear.32x32"/>
-                    <bt:Image size="80" resid="IconClear.80x80"/>
+                    <bt:Image size="16" resid="ClearIcon.16x16"/>
+                    <bt:Image size="32" resid="ClearIcon.32x32"/>
+                    <bt:Image size="80" resid="ClearIcon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>clearFill</FunctionName>
@@ -133,43 +109,38 @@
         <bt:Image id="Icon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-16.png"/>
         <bt:Image id="Icon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-32.png"/>
         <bt:Image id="Icon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/icon-80.png"/>
-        <bt:Image id="IconYellow.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-16.png"/>
-        <bt:Image id="IconYellow.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-32.png"/>
-        <bt:Image id="IconYellow.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-80.png"/>
-        <bt:Image id="IconOrange.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-16.png"/>
-        <bt:Image id="IconOrange.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-32.png"/>
-        <bt:Image id="IconOrange.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-80.png"/>
-        <bt:Image id="IconBlue.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/blue-16.png"/>
-        <bt:Image id="IconBlue.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/blue-32.png"/>
-        <bt:Image id="IconBlue.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/blue-80.png"/>
-        <bt:Image id="IconGray.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-16.png"/>
-        <bt:Image id="IconGray.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-32.png"/>
-        <bt:Image id="IconGray.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-80.png"/>
-        <bt:Image id="IconClear.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-16.png"/>
-        <bt:Image id="IconClear.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-32.png"/>
-        <bt:Image id="IconClear.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-80.png"/>
+        <bt:Image id="YellowIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-16.png"/>
+        <bt:Image id="YellowIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-32.png"/>
+        <bt:Image id="YellowIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/yellow-80.png"/>
+        <bt:Image id="OrangeIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-16.png"/>
+        <bt:Image id="OrangeIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-32.png"/>
+        <bt:Image id="OrangeIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/orange-80.png"/>
+        <bt:Image id="GrayIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-16.png"/>
+        <bt:Image id="GrayIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-32.png"/>
+        <bt:Image id="GrayIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/gray-80.png"/>
+        <bt:Image id="ClearIcon.16x16" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-16.png"/>
+        <bt:Image id="ClearIcon.32x32" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-32.png"/>
+        <bt:Image id="ClearIcon.80x80" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/assets/clear-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/runtime-v1.1.1.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://takehana-tokushu.github.io/excel-quick-fill-color/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with Quick Fill Color!"/>
         <bt:String id="QuickFillGroup.Label" DefaultValue="Quick Fill"/>
-        <bt:String id="FillYellow.Label" DefaultValue="予約"/>
-        <bt:String id="FillOrange.Label" DefaultValue="移動"/>
-        <bt:String id="FillBlue.Label" DefaultValue="バラし"/>
-        <bt:String id="FillGray.Label" DefaultValue="停止"/>
-        <bt:String id="ClearFill.Label" DefaultValue="クリア"/>
+        <bt:String id="FillYellow.Label" DefaultValue="Yellow"/>
+        <bt:String id="FillOrange.Label" DefaultValue="Orange"/>
+        <bt:String id="FillGray.Label" DefaultValue="Gray"/>
+        <bt:String id="ClearFill.Label" DefaultValue="Clear Fill"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Quick Fill Color add-in loaded successfully. Go to the HOME tab and use the Quick Fill buttons."/>
-        <bt:String id="FillYellow.Tooltip" DefaultValue="選択したセルを予約として塗りつぶします"/>
-        <bt:String id="FillOrange.Tooltip" DefaultValue="選択したセルを移動として塗りつぶします"/>
-        <bt:String id="FillBlue.Tooltip" DefaultValue="選択したセルをバラしとして塗りつぶします"/>
-        <bt:String id="FillGray.Tooltip" DefaultValue="選択したセルを停止として塗りつぶします"/>
-        <bt:String id="ClearFill.Tooltip" DefaultValue="選択したセルの塗りつぶしをクリアします"/>
+        <bt:String id="FillYellow.Tooltip" DefaultValue="Fill selected cells with yellow"/>
+        <bt:String id="FillOrange.Tooltip" DefaultValue="Fill selected cells with orange"/>
+        <bt:String id="FillGray.Tooltip" DefaultValue="Fill selected cells with gray"/>
+        <bt:String id="ClearFill.Tooltip" DefaultValue="Clear fill color from selected cells"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
